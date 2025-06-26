@@ -1,4 +1,6 @@
 import Header from '../Components/Header'
+import Footer from '../Components/Footer'
+
 
 
 export default function Products() {
@@ -6,6 +8,8 @@ export default function Products() {
     <div>
       < Header />
       <h1>Hello GMA Medical Products</h1>
+
+      < Footer />
     </div>
   );
 }

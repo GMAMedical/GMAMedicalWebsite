@@ -1,11 +1,13 @@
 
 import Header from './Components/Header'
+import Footer from './Components/Footer'
 
 export default function Home() {
   return (
-    <div>
+    <main>
       < Header />
       <h1>Hello GMA Medical</h1>
-    </div>
+      < Footer />
+    </main>
   );
 }

@@ -9,7 +9,7 @@ export default function Home() {
 
       < Header />
 
-      <div id='banner-top'>
+      <div id='banner-top-home'>
         <h1>GMA MEDICAL</h1>
         <h3>Quality service backed by quality products by companies the world trust.</h3>
         <img src="/Images/blue-cover-2.png" alt="Blue Surgical Background" />

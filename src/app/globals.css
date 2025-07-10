@@ -1,0 +1,27 @@
+@font-face {
+    font-family: Roboto;
+    src: url(../app/assets/fonts/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: Roboto Condensed;
+    src: url(./assets/fonts/RobotoCondensed-Regular.ttf);
+}
+@import "tailwindcss";
+
+body {
+    background-color: #D9DCD6;
+    margin: 0;
+    padding: 0;
+}
+
+@theme {
+    --font-roboto: Roboto, "sans-serif";
+    --font-roboto-condensed: Roboto Condensed, "sans-serif";
+
+    --color-gma-red: #540000;
+    --color-gma-gray: #808080;
+    --color-gma-text-title: #000000;
+    --color-gma-text-p: #1C1D1E;
+    --color-gma-text-white: #FFFFFF;
+    --color-gma-blue: #2277D8;
+}

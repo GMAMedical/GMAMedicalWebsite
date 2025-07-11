@@ -1,12 +1,8 @@
-import Header from '../Components/Header'
-import Footer from '../Components/Footer'
-
 
 
 export default function Login() {
   return (
     <div>
-      < Header />
 
       <div id='login-container'>
         <div id='title-login'>
@@ -18,7 +14,6 @@ export default function Login() {
         </div>
       </div>
 
-      < Footer />
     </div>
   );
 }

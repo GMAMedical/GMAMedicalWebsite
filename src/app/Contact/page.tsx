@@ -1,12 +1,8 @@
-import Header from '../Components/Header'
-import Footer from '../Components/Footer'
-
 
 
 export default function Contact() {
   return (
     <div>
-      <Header />
 
       <div id='banner-top-contact'>
         <img src="/Images/GMA-Logo-w-text.jpg" alt="GMA Medical Logo" />
@@ -22,7 +18,6 @@ export default function Contact() {
         </div>
       </div>
       
-      < Footer />
     </div>
   );
 }

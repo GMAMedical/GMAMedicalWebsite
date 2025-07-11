@@ -14,7 +14,7 @@ export default function Header() {
             <Link href="/">
                 <img
                     src="./Images/GMA-Logo-w-text.jpg"
-                    className='w-[100px] md:w-[120px] rounded-full'
+                    className='w-[100px] md:w-[120px] rounded-full hover:w-[130px]'
                     alt="GMA Logo"
                 />
             </Link>

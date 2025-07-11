@@ -1,12 +1,8 @@
-import Header from '../Components/Header'
-import Footer from '../Components/Footer'
-
 
 
 export default function Products() {
   return (
     <div>
-      < Header />
 
       <div id='banner-top-products'>
         <h1>PRODUCTS</h1>
@@ -22,8 +18,6 @@ export default function Products() {
 
       </div>
     
-
-      < Footer />
     </div>
   );
 }

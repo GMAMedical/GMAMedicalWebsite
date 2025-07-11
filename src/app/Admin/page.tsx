@@ -1,11 +1,8 @@
-import Header from '../Components/Header'
-import Footer from '../Components/Footer'
 
 
 export default function Admin() {
   return (
     <div>
-      < Header />
 
       <div id='title-admin'>
         <h1>ADMIN PAGE</h1>
@@ -35,7 +32,6 @@ export default function Admin() {
 
       </div>
       
-      < Footer />
     </div>
   );
 }

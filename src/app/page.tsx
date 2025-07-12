@@ -48,15 +48,15 @@ export default function Home() {
         </Link>     
       </div>
 
-      <div id='more-about-us' className='grid grid-rows-3 grid-cols-2 m-[85px] text-gma-text-white font-roboto-condensed'>
+      <div id='more-about-us' className='grid lg:grid-rows-3 lg:grid-cols-2 m-[85px] text-gma-text-white font-roboto-condensed'>
 
-        <div id='values'>
+        <div id='values' className='lg:border-r-12 border-gma-gray mr-[25px] text-center'>
           <h2 className='text-gma-text-white text-[45px] drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>OUR VALUES</h2>
           <h3 className='text-gma-text-white text-[18px] drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>What makes us... US</h3>
         </div>
 
 
-        <div id='values-desc' className='grid grid-cols-2 grid-rows-1'>
+        <div id='values-desc' className='grid lg:grid-cols-2 lg:grid-rows-1'>
 
           <div id='values-desc-1' className='bg-gma-gray p-[18px] m-[20px] border-2 border-black [box-shadow:4px_4px_8px_0px_rgba(0,0,0,0.25)]'>
             <ul className='list-disc'>
@@ -76,7 +76,7 @@ export default function Home() {
         </div>
 
 
-        <div id='exp'>
+        <div id='exp' className='lg:border-r-12 border-gma-gray mr-[25px] text-center'>
           <h2 className='text-gma-text-white text-[45px] drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>OUR EXPERIENCE</h2>
           <h3 className='text-gma-text-white text-[18px] drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>A little background about us.</h3>
         </div>
@@ -89,7 +89,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div id='focus'>
+        <div id='focus' className='lg:border-r-12 border-gma-gray mr-[25px] text-center'>
           <h2 className='text-gma-text-white text-[45px] drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>OUR FOCUS</h2>
           <h3 className='text-gma-text-white text-[18px] drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>What's our goal?</h3>
         </div>
@@ -101,7 +101,6 @@ export default function Home() {
             We are focused on providing cost effective, innovative products and services to the operating room. We work with surgical specialists in areas such as Cardiovascular, Cardiothoracic, Neuro and Spine, Gynecology, Orthopedics, and Urology, as well as, in General surgery.
           </p>
         </div>
-
 
       </div>
       

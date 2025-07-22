@@ -1,4 +1,6 @@
-
+'use client';
+import { Authenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
 
 export default function Login() {
   return (
@@ -16,6 +18,9 @@ export default function Login() {
 
         <div id='login-form'>
           {/* TODO apply login form here */}
+          <Authenticator hideSignUp>
+            
+          </Authenticator>
         </div>
 
       </div>

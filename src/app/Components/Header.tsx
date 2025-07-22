@@ -8,7 +8,7 @@ export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
-        <nav className='bg-gma-red relative px-4 py-4 flex justify-between items-center'>
+        <nav className='bg-gma-blue relative px-4 py-4 flex justify-between items-center'>
 
             {/* Logo */}
             <Link href="/">
@@ -47,7 +47,7 @@ export default function Header() {
 
             {/* Mobile Menu */}
             {menuOpen && (
-                <div className='absolute top-full left-0 w-full bg-gma-red text-white flex flex-col items-start px-6 py-4 space-y-4 md:hidden z-10 shadow-lg'>
+                <div className='absolute top-full left-0 w-full bg-gma-blue text-white flex flex-col items-start px-6 py-4 space-y-4 md:hidden z-10 shadow-lg'>
                     {["Products", "Contact", "Login"].map((text) => (
                         <Link
                             key={text}

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 
+
 export default function Home() {
   return (
     <main>
@@ -30,8 +31,42 @@ export default function Home() {
       <div id='manufacturers' className='bg-gma-gray p-[55px] text-center'>
         <h2 className='text-gma-text-white font-roboto-condensed text-[38px] lg:text-[45px]'>MANUFACTURERS</h2>
         <h3 className='text-gma-text-white font-roboto-condensed text-[18px] px-[12px]'>These companies are what makes US happen.</h3>
-        <div id='manufacturers-images'>
-          {/* TODO add all static manufacturers images when Jeff sends them */}
+        <div id='manufacturers-images' className='md:grid md:grid-cols-2 md:grid-rows-2'>
+
+          {/* Could make this a array with names then map into a template and all that but I am not trying to change the filenames again */}
+
+          <div className='flex justify-center md:content-center md:justify-end'>
+            <img 
+              src="Images/MANUFACTURES/appliedImage.png" 
+              alt="Applied BioLogics Image" 
+              className='w-[350px] m-[35px]'
+            />
+          </div>
+
+          <div className='flex justify-center md:content-center md:justify-start'>
+            <img 
+              src="Images/MANUFACTURES/ICImage.png" 
+              alt="IC Medical Image" 
+              className='w-[350px] m-[35px]'
+            />
+          </div>
+
+          <div className='flex justify-center md:content-center md:justify-end'>
+            <img 
+              src="Images/MANUFACTURES/novImage.png" 
+              alt="Novus Scientific Image" 
+              className='w-[350px] m-[35px]'
+            />
+          </div>
+
+          <div className='flex justify-center md:content-center md:justify-start'>
+            <img 
+              src="Images/MANUFACTURES/varImage.png" 
+              alt="Variamed Image" 
+              className='w-[350px] m-[35px]'
+            />
+          </div>
+
         </div>
       </div>
 

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css';
+import ConfigureAmplify from '@/utils/configureAmplify';
 import Header from './Components/Header'
 import Footer from './Components/Footer'
 
@@ -20,6 +21,7 @@ export default function RootLayout({
         <Header />
 
         <main className="flex-grow">
+          <ConfigureAmplify />
           {children}
         </main>
 

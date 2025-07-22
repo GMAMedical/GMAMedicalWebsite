@@ -1,8 +1,11 @@
 import type { Metadata } from 'next'
 import './globals.css';
-import ConfigureAmplify from '@/utils/configureAmplify';
 import Header from './Components/Header'
 import Footer from './Components/Footer'
+import { Amplify } from 'aws-amplify'
+import outputs from "@/amplify_outputs.json";
+
+Amplify.configure(outputs, { ssr: true })
 
 export const metadata: Metadata = {
   title: 'GMA Medical',
@@ -21,7 +24,6 @@ export default function RootLayout({
         <Header />
 
         <main className="flex-grow">
-          <ConfigureAmplify />
           {children}
         </main>
 

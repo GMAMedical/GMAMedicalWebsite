@@ -2,6 +2,11 @@
 import { Authenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 
+import { Amplify } from 'aws-amplify'
+import outputs from "@/amplify_outputs.json";
+
+Amplify.configure(outputs, { ssr: true })
+
 export default function Login() {
   return (
     <div>
@@ -17,9 +22,8 @@ export default function Login() {
         </div>
 
         <div id='login-form'>
-          {/* TODO apply login form here */}
           <Authenticator hideSignUp>
-            
+
           </Authenticator>
         </div>
 

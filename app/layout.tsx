@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css';
 import Header from './Components/Header'
 import Footer from './Components/Footer'
+
 import { Amplify } from 'aws-amplify'
 import outputs from "@/amplify_outputs.json";
 

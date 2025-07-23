@@ -1,10 +1,32 @@
+'use client';
+import { useEffect, useState } from "react";
+import { getCurrentUser } from 'aws-amplify/auth';
+import { useRouter } from "next/navigation";
+
 import { Amplify } from 'aws-amplify'
 import outputs from "@/amplify_outputs.json";
-
 Amplify.configure(outputs, { ssr: true })
 
-export default function Admin() {
-  return (
+
+function Admin() {
+
+  const [loading, setLoading] = useState(true);
+  const router = useRouter();
+
+  useEffect(() => {
+    const checkUser = async () => {
+      try {
+        await getCurrentUser(); // throws if not logged in
+        setLoading(false);
+      } catch {
+        router.push("/Login");
+      }
+    };
+    checkUser();
+  }, [router]);
+
+  if (!loading) return (
+
     <div>
 
       <div id='title-admin' className='text-center bg-gma-gray p-[55px] w-5/6 mx-auto rounded-2xl mt-[55px]'>
@@ -43,4 +65,7 @@ export default function Admin() {
       
     </div>
   );
+
 }
+
+export default Admin;

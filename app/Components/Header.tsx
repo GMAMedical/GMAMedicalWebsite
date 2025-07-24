@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { getCurrentUser } from 'aws-amplify/auth';
 import { useRouter } from "next/navigation";
+import { Hub } from 'aws-amplify/utils';
+
 
 
 Amplify.configure(outputs, { ssr: true })
@@ -16,8 +18,7 @@ export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [menuStatus, setMenuStatus] = useState(false);
 
-    useEffect(() => {
-        const checkUser = async () => {
+    const checkUser = async () => {
           try {
             await getCurrentUser();
             setMenuStatus(true);
@@ -25,7 +26,18 @@ export default function Header() {
             setMenuStatus(false);
           }
         };
+
+    useEffect(() => {
         checkUser();
+        
+        const unsubscribe = Hub.listen("auth", ({ payload }) => {
+            if (payload.event === "signedIn" || payload.event === "signedOut") {
+                checkUser();
+            }
+        });
+
+        return () => unsubscribe();
+
       }, [router]);
 
       const menuLinks = menuStatus ? ["Products", "Contact", "Admin"] : ["Products", "Contact", "Login"];

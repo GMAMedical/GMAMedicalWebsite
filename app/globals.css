@@ -18,10 +18,48 @@ body {
     --font-roboto: Roboto, "sans-serif";
     --font-roboto-condensed: Roboto Condensed, "sans-serif";
 
-    --color-gma-red: #540000;
     --color-gma-gray: #808080;
     --color-gma-text-title: #000000;
     --color-gma-text-p: #1C1D1E;
     --color-gma-text-white: #FFFFFF;
     --color-gma-blue: #2277D8;
 }
+
+[data-amplify-authenticator] {
+  /* Border Form */
+  --amplify-components-authenticator-router-box-shadow: none;
+  --amplify-components-authenticator-router-border-width: 1px;
+  --amplify-components-authenticator-router-border-color: #ccc;
+  --amplify-components-authenticator-router-border-radius: 8px;
+  --amplify-components-authenticator-router-background-color: #ffffff;
+  --amplify-components-authenticator-form-padding: 1rem 1.5rem;
+
+  /* Input Fields */
+  --amplify-components-fieldcontrol-border-radius: 6px;
+  --amplify-components-fieldcontrol-border-color: #ccc;
+  --amplify-components-fieldcontrol-focus-border-color: #2277D8;
+  --amplify-components-fieldcontrol-background-color: #ffffff;
+  --amplify-components-fieldcontrol-color: #000000;
+
+  /* Labels */
+  --amplify-components-label-color: #000000;
+  --amplify-components-label-font-size: 0.9rem;
+  --amplify-components-label-font-weight: 400;
+  --amplify-components-label-text-align: center;
+
+  /* Login Button */
+  --amplify-components-button-primary-background-color: #2277D8;
+  --amplify-components-button-primary-hover-background-color: #1D4ED8;
+  --amplify-components-button-primary-color: #ffffff;
+  --amplify-components-button-primary-font-weight: 600;
+  --amplify-components-button-primary-border-radius: 6px;
+  --amplify-components-button-primary-padding-vertical: 0.75rem;
+  --amplify-components-button-primary-padding-horizontal: 1rem;
+}
+
+
+
+
+
+
+

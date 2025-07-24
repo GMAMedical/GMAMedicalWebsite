@@ -1,11 +1,46 @@
 'use client';
-
+import outputs from "@/amplify_outputs.json";
+import { Amplify } from 'aws-amplify'
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { getCurrentUser } from 'aws-amplify/auth';
+import { useRouter } from "next/navigation";
+import { Hub } from 'aws-amplify/utils';
+
+
+
+Amplify.configure(outputs, { ssr: true })
 
 export default function Header() {
 
+    const router = useRouter();
+
     const [menuOpen, setMenuOpen] = useState(false);
+    const [menuStatus, setMenuStatus] = useState(false);
+
+    const checkUser = async () => {
+          try {
+            await getCurrentUser();
+            setMenuStatus(true);
+          } catch {
+            setMenuStatus(false);
+          }
+        };
+
+    useEffect(() => {
+        checkUser();
+        
+        const unsubscribe = Hub.listen("auth", ({ payload }) => {
+            if (payload.event === "signedIn" || payload.event === "signedOut") {
+                checkUser();
+            }
+        });
+
+        return () => unsubscribe();
+
+      }, [router]);
+
+      const menuLinks = menuStatus ? ["Products", "Contact", "Admin"] : ["Products", "Contact", "Login"];
 
     return (
         <nav className='bg-gma-blue relative px-4 py-4 flex justify-between items-center'>
@@ -21,7 +56,7 @@ export default function Header() {
 
             {/* Desktop Nav */}
             <div className='hidden md:flex items-center space-x-12 lg:space-x-24 h-full'>
-                {["Products", "Contact", "Login"].map((text) => (
+                {menuLinks.map((text) => (
                     <Link
                         key={text}
                         href={`/${text}`}

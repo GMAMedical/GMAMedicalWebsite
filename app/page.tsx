@@ -2,6 +2,10 @@ import Link from 'next/link';
 
 
 export default function Home() {
+
+  
+
+
   return (
     <main>
 
@@ -73,7 +77,7 @@ export default function Home() {
       <div id='whats-next' className='text-center p-[85px] flex flex-col'>
         <h2 className='text-[38px] font-bold font-roboto-condensed lg:text-[45px]'>What's Next?</h2>
         <h3 className='text-[18px] font-roboto-condensed text-gma-text-p'>
-          Not sure what's next? Browse our wide selection of products—then reach out! It's that easy.
+          Not sure what's next? Browse our wide selection of {<Link href="/Products" className='font-bold border-b-2'>products</Link>}—then reach out! It's that easy.
         </h3>
         <Link 
           href="/Contact"

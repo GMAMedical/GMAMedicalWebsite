@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { getCurrentUser } from 'aws-amplify/auth';
 import { useRouter } from "next/navigation";
+import { signOut } from 'aws-amplify/auth';
 
 import { Amplify } from 'aws-amplify'
 import outputs from "@/amplify_outputs.json";
@@ -24,6 +25,12 @@ function Admin() {
     };
     checkUser();
   }, [router]);
+
+  const handleSignOut = async () => {
+    await signOut();
+    router.push("/");
+  };
+
 
   if (!loading) return (
 
@@ -61,7 +68,10 @@ function Admin() {
         <h2 className='font-roboto-condensed text-gma-text-title text-[55px] font-bold mt-[35px]'>Indications</h2>
         {/* TODO add indications form */}
 
+        <button onClick={() => handleSignOut()}>Sign out</button>
+
       </div>
+
       
     </div>
   );

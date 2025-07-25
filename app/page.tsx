@@ -87,51 +87,75 @@ export default function Home() {
         </Link>     
       </div>
 
-      <div id='more-about-us' className='grid lg:grid-rows-3 lg:grid-cols-2 m-[85px] text-gma-text-white font-roboto-condensed'>
+      <div id='more-about-us' className='bg-gma-gray mb-[55px] font-roboto-condensed text-gma-text-white'>
 
-        <div id='values' className='text-center px-[10px] lg:border-r-12 border-gma-gray lg:mr-[25px] lg:pl-[31px]'>
-          <h2 className='text-gma-text-white text-[45px] drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>OUR VALUES</h2>
-          <h3 className='text-gma-text-white text-[18px] drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>What makes us... US</h3>
-        </div>
 
-        <div id='values-desc' className='grid lg:grid-cols-2 lg:grid-rows-1 justify-center'>
-          <div id='values-desc-1' className='bg-gma-gray p-[18px] m-[20px] border-2 border-black [box-shadow:4px_4px_8px_0px_rgba(0,0,0,0.25)]'>
-            <ul className='list-disc'>
-              <li className='lg:pb-[12px] lg:pl-[12px] font-bold leading-[28px]'>Providing exceptional service and continuous support</li>
-              <li className='lg:pb-[12px] lg:pl-[12px] font-bold leading-[28px]'>Treating people we contact with respect and courtesy</li>
-            </ul>
+        <div id='values' className='flex justify-center pt-[75px]'>
+          <div className='flex flex-col w-3xl'>
+            <div className='flex flex-row justify-center m-[15px]'>
+              <img src="../Images/ICONS/bookIcon.png" alt="Book Icon" className='w-[80px] h-[80px]' />
+              <h2 className='text-[38px] md:text-[55px] drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] mt-[15px] md:mt-[0px]'>OUR VALUES</h2>
+            </div>
+            <div className='flex justify-center'>
+              <hr className='border-5 w-xs md:w-xl'/>
+            </div>
+            <div className='flex justify-center text-[20px] mt-[15px]'>
+              <p className='drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>What makes us... US</p>
+            </div>
+            <div className='flex justify-center text-center'>
+              <div className='text-gma-text-title bg-gma-text-white p-[35px] m-[15px] w-xs md:w-lg border-2 border-black rounded-full text-[15px] md:text-[20px]'>
+                <p className='m-[5px]'>Being professional</p>
+                <p className='m-[5px]'>Doing everything we do well</p>
+                <p className='m-[5px]'>Demonstrating rapid response</p>
+              </div>
+            </div>
+            <div className='flex justify-center text-center'>
+              <p className='text-gma-text-title bg-gma-text-white p-[35px] m-[15px] w-sx md:w-lg border-2 border-black rounded-full text-[15px] md:text-[20px]'>Providing exceptional service and continuous support</p>
+            </div>
+            <div className='flex justify-center text-center'>
+              <p className='text-gma-text-title bg-gma-text-white p-[35px] m-[15px] w-sx md:w-lg border-2 border-black rounded-full text-[15px] md:text-[20px]'>Treating people we contact with respect and courtesy</p>
+            </div>
           </div>
+        </div>
 
-          <div id='values-desc-2' className='bg-gma-gray p-[18px] m-[20px] border-2 border-black [box-shadow:4px_4px_8px_0px_rgba(0,0,0,0.25)]'>
-            <ul className='list-disc'>
-              <li className='lg:pb-[12px] lg:pl-[12px] font-bold leading-[28px]'>Being professional</li>
-              <li className='lg:pb-[12px] lg:pl-[12px] font-bold leading-[28px]'>Doing everything we do well</li>
-              <li className='lg:pb-[12px] lg:pl-[12px] font-bold leading-[28px]'>Demonstrating rapid response</li>
-            </ul>
+
+        <div id='exp' className='flex justify-center'>
+          <div className='flex flex-col w-3xl'>
+            <div className='flex flex-row justify-center content-center m-[15px] mt-[75px]'>
+              <img src="../Images/ICONS/directionsIcon.png" alt="Book Icon" className='w-[80px] h-[80px]' />
+              <h2 className='text-[38px] md:text-[55px] drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] mt-[15px] md:mt-[0px] text-nowrap'>OUR EXPERIENCE</h2>
+            </div>
+            <div className='flex justify-center'>
+              <hr className='border-5 w-xs md:w-xl'/>
+            </div>
+            <div className='flex justify-center text-[20px] mt-[15px]'>
+              <p className='drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>A little background about us.</p>
+            </div>
+            <div className='flex justify-center text-center'>
+              <p className='text-gma-text-title bg-gma-text-white p-[65px] md:p-[35px] m-[15px] w-xs md:w-xl border-2 border-black rounded-full text-[15px] md:text-[20px]'>We are based on 10+ years of sales experience with Stryker, Zimmer, Karl Stortz, and Olympus. We have developed strong relationships with the administrations, nurses, and doctors of leading health care providers in Southern Ohio, Indiana and Kentucky.</p>
+            </div>
           </div>
         </div>
 
-        <div id='exp' className='text-center px-[10px] lg:border-r-12 border-gma-gray lg:mr-[25px] lg:pl-[31px]'>
-          <h2 className='text-gma-text-white text-[45px] drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>OUR EXPERIENCE</h2>
-          <h3 className='text-gma-text-white text-[18px] drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>A little background about us.</h3>
-        </div>
 
-        <div id='exp-desc' className='bg-gma-gray p-[18px] m-auto border-2 border-black [box-shadow:4px_4px_8px_0px_rgba(0,0,0,0.25)]'>
-          <p className='lg:pb-[12px] lg:pl-[12px] font-bold leading-[28px] text-center'>
-            We are based on 10+ years of sales experience with Stryker, Zimmer, Karl Stortz, and Olympus. We have developed strong relationships with the administrations, nurses, and doctors of leading health care providers in Southern Ohio, Indiana and Kentucky.
-          </p>
-        </div>
+        <div id='focus' className='flex justify-center pb-[75px]'>
+          <div className='flex flex-col w-3xl'>
+            <div className='flex flex-row justify-center m-[15px] mt-[75px]'>
+              <img src="../Images/ICONS/queryIcon.png" alt="Book Icon" className='w-[80px] h-[80px]' />
+              <h2 className='text-[38px] md:text-[55px] drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] mt-[15px] md:mt-[0px]'>OUR FOCUS</h2>
+            </div>
+            <div className='flex justify-center'>
+              <hr className='border-5 w-xs md:w-xl'/>
+            </div>
+            <div className='flex justify-center text-[20px] mt-[15px]'>
+              <p className='drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>What's our goal?</p>
+            </div>
+            <div className='flex justify-center text-center'>
+              <p className='text-gma-text-title bg-gma-text-white p-[65px] md:p-[35px] m-[15px] w-xs md:w-xl border-2 border-black rounded-full text-[15px] md:text-[20px]'>We are focused on providing cost effective, innovative products and services to the operating room. We work with surgical specialists in  areas such as Cardiovascular, Cardiothoracic, Neuro and Spine, Gynecology, Orthopedics, and Urology, as well as, in General surgery.</p>
+            </div>
+          </div>
+        </div> 
 
-        <div id='focus' className='text-center px-[10px] lg:border-r-12 border-gma-gray lg:mr-[25px] lg:pl-[31px]'>
-          <h2 className='text-gma-text-white text-[45px] drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>OUR FOCUS</h2>
-          <h3 className='text-gma-text-white text-[18px] drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>What's our goal?</h3>
-        </div>
-
-        <div id='focus-desc' className='bg-gma-gray p-[18px] m-auto border-2 border-black [box-shadow:4px_4px_8px_0px_rgba(0,0,0,0.25)]'>
-          <p className='lg:pb-[12px] lg:pl-[12px] font-bold leading-[28px] text-center'>
-            We are focused on providing cost effective, innovative products and services to the operating room. We work with surgical specialists in areas such as Cardiovascular, Cardiothoracic, Neuro and Spine, Gynecology, Orthopedics, and Urology, as well as, in General surgery.
-          </p>
-        </div>
 
       </div>
 

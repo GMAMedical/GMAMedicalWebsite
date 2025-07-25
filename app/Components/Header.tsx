@@ -7,8 +7,6 @@ import { getCurrentUser } from 'aws-amplify/auth';
 import { useRouter } from "next/navigation";
 import { Hub } from 'aws-amplify/utils';
 
-
-
 Amplify.configure(outputs, { ssr: true })
 
 export default function Header() {
@@ -83,7 +81,7 @@ export default function Header() {
             {/* Mobile Menu */}
             {menuOpen && (
                 <div className='absolute top-full left-0 w-full bg-gma-blue text-white flex flex-col items-start px-6 py-4 space-y-4 md:hidden z-10 shadow-lg'>
-                    {["Products", "Contact", "Login"].map((text) => (
+                    {menuLinks.map((text) => (
                         <Link
                             key={text}
                             href={`/${text}`}

@@ -11,16 +11,28 @@ const schema = a.schema({
     .model({
       content: a.string(),
     })
-    .authorization((allow) => [allow.guest()]),
+    .authorization(allow => [
+      allow.guest().to(['read']),
+      allow.authenticated('identityPool')
+    ]),
+    Product: a
+      .model({
+        title: a.string(),
+        description: a.string(),
+        typeOfProduct: a.string(),
+        companyName: a.string(),
+        indications: a.string()
+      })
+    .authorization(allow => [
+      allow.guest().to(['read']),
+      allow.authenticated('identityPool')
+    ])
 });
 
 export type Schema = ClientSchema<typeof schema>;
 
 export const data = defineData({
-  schema,
-  authorizationModes: {
-    defaultAuthorizationMode: 'identityPool',
-  },
+    schema,
 });
 
 /*== STEP 2 ===============================================================

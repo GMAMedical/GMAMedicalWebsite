@@ -51,7 +51,7 @@ export default function Login() {
 
           <h3 className="font-roboto-condensed text-gma-text-white text-[20px]">GMA Medical Admin Login</h3>
 
-          <Authenticator hideSignUp />
+          <Authenticator hideSignUp className='pt-[45px]'/>
 
         </div>
 

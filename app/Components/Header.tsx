@@ -62,7 +62,7 @@ export default function Header() {
                             after:content-[""] after:absolute after:left-0 after:bottom-[-16px]
                             after:h-[4px] after:w-0 after:bg-white
                             after:transition-all after:duration-300
-                            hover:after:w-full'
+                            hover:after:w-full font-extrabold'
                     >
                         {text}
                     </Link>
@@ -86,7 +86,7 @@ export default function Header() {
                             key={text}
                             href={`/${text}`}
                             onClick={() => setMenuOpen(false)}
-                            className='text-[18px] font-roboto hover:underline underline-offset-4 decoration-white decoration-2'
+                            className='text-[18px] font-roboto font-extrabold hover:underline underline-offset-4 decoration-white decoration-2'
                         >
                             {text}
                         </Link>

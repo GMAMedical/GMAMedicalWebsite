@@ -18,6 +18,7 @@ const schema = a.schema({
     Product: a
       .model({
         title: a.string(),
+        images: a.string().array(),
         description: a.string(),
         typeOfProduct: a.string(),
         companyName: a.string(),

@@ -233,7 +233,7 @@ function Admin() {
             acceptedFileTypes={['image/*']}
             path={"images/" + title + "/"}
             bucket="productImages"
-            maxFileCount={5}
+            maxFileCount={6}
             isResumable
             onFileRemove={({ key }) => {
               if (!key) return;

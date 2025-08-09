@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { getCurrentUser } from 'aws-amplify/auth';
 import { useRouter } from "next/navigation";
 import { Hub } from 'aws-amplify/utils';
+import Image from 'next/image'
 
 Amplify.configure(outputs, { ssr: true })
 
@@ -45,10 +46,12 @@ export default function Header() {
 
             {/* Logo */}
             <Link href="/">
-                <img
-                    src="./Images/GMA-Logo-w-text.jpg"
+                <Image
+                    src="/Images/GMA-Logo-w-text.jpg"
                     className='w-[100px] md:w-[120px] rounded-full hover:w-[130px]'
                     alt="GMA Logo"
+                    width={100}
+                    height={100}
                 />
             </Link>
 
@@ -62,7 +65,7 @@ export default function Header() {
                             after:content-[""] after:absolute after:left-0 after:bottom-[-16px]
                             after:h-[4px] after:w-0 after:bg-white
                             after:transition-all after:duration-300
-                            hover:after:w-full'
+                            hover:after:w-full font-extrabold'
                     >
                         {text}
                     </Link>
@@ -71,11 +74,11 @@ export default function Header() {
 
             {/* Hamburger Icon */}
             <button
-                className='md:hidden text-white text-5xl focus:outline-none'
+                className='md:hidden shrink-0 w-12 h-12 flex items-center justify-center'
                 onClick={() => setMenuOpen(!menuOpen)}
                 aria-label="Toggle menu"
             >
-                ☰
+                <img src="/Images/ICONS/menuIcon.png" alt="Menu Icon" />
             </button>
 
             {/* Mobile Menu */}
@@ -86,7 +89,7 @@ export default function Header() {
                             key={text}
                             href={`/${text}`}
                             onClick={() => setMenuOpen(false)}
-                            className='text-[18px] font-roboto hover:underline underline-offset-4 decoration-white decoration-2'
+                            className='text-[18px] font-roboto font-extrabold hover:underline underline-offset-4 decoration-white decoration-2'
                         >
                             {text}
                         </Link>

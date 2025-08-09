@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image'
 
 
 export default function Home() {
@@ -40,34 +41,42 @@ export default function Home() {
           {/* Could make this a array with names then map into a template and all that but I am not trying to change the filenames again */}
 
           <div className='flex justify-center md:content-center md:justify-end'>
-            <img 
-              src="Images/MANUFACTURES/appliedImage.png" 
+            <Image
+              src="/Images/MANUFACTURES/appliedImage.png" 
               alt="Applied BioLogics Image" 
               className='w-[350px] m-[35px]'
+              width={350}
+              height={350}
             />
           </div>
 
           <div className='flex justify-center md:content-center md:justify-start'>
-            <img 
-              src="Images/MANUFACTURES/ICImage.png" 
+            <Image 
+              src="/Images/MANUFACTURES/ICImage.png" 
               alt="IC Medical Image" 
               className='w-[350px] m-[35px]'
+              width={350}
+              height={350}
             />
           </div>
 
           <div className='flex justify-center md:content-center md:justify-end'>
-            <img 
-              src="Images/MANUFACTURES/novImage.png" 
+            <Image 
+              src="/Images/MANUFACTURES/novImage.png" 
               alt="Novus Scientific Image" 
               className='w-[350px] m-[35px]'
+              width={350}
+              height={350}
             />
           </div>
 
           <div className='flex justify-center md:content-center md:justify-start'>
-            <img 
-              src="Images/MANUFACTURES/varImage.png" 
+            <Image 
+              src="/Images/MANUFACTURES/varImage.png" 
               alt="Variamed Image" 
               className='w-[350px] m-[35px]'
+              width={350}
+              height={350}
             />
           </div>
 
@@ -132,7 +141,7 @@ export default function Home() {
               <p className='drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>A little background about us.</p>
             </div>
             <div className='flex justify-center text-center'>
-              <p className='text-gma-text-title bg-gma-text-white p-[65px] md:p-[35px] m-[15px] w-xs md:w-xl border-2 border-black rounded-full text-[15px] md:text-[20px]'>We are based on 10+ years of sales experience with Stryker, Zimmer, Karl Stortz, and Olympus. We have developed strong relationships with the administrations, nurses, and doctors of leading health care providers in Southern Ohio, Indiana and Kentucky.</p>
+              <p className='text-gma-text-title bg-gma-text-white p-[65px] md:p-[35px] m-[15px] w-xs md:w-xl border-2 border-black rounded-full text-[15px] md:text-[20px]'>We are based on 15+ years of sales experience with Stryker, Zimmer, Karl Stortz, and Olympus. We have developed strong relationships with the administrations, nurses, and doctors of leading health care providers in Southern Ohio, Indiana and Kentucky.</p>
             </div>
           </div>
         </div>

@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 import type { Schema } from '../../amplify/data/resource'
 import { generateClient } from 'aws-amplify/data'
+import { StorageImage } from '@aws-amplify/ui-react-storage';
+import Link from "next/link";
 
 const client = generateClient<Schema>()
 
@@ -72,25 +74,31 @@ export default function Products() {
         {/* TODO add filter options here */}
       </div>
 
+      
       <div id='product-card-container' className="grid grid-cols-1 md:grid-cols-3 p-7 md:p-15">
 
-          {products.map(({ id, title, companyName }) => (
+          {products.map(({ id, title, companyName, images }) => (
             <div
               id="product-card"
               className="border-4 border-gma-text-white bg-gma-text-white rounded-lg shadow-xl/30 mb-7 mx-auto w-[90%] sm:w-[80%] md:w-[300px] lg:w-[350px]"
               key={id}
             >
-              <img
-                src="/Images/sampleProduct2.png"
-                alt="Product Image"
-                className="w-full h-[200px] sm:h-[250px] md:h-[305px] object-cover"
-              />
+              <Link key={id} href={"/Products/" + id}>
+              <div className="w-full h-[200px] sm:h-[250px] md:h-[305px] overflow-hidden">
+                <StorageImage 
+                  alt={`${title} Image`} 
+                  path={`images/${title}/${images?.[0] || "placeholder.png"}`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
               <h1 className="text-center font-roboto-condensed text-base sm:text-lg">{companyName}</h1>
               <div className="border-4 border-gma-gray bg-gma-gray p-3 sm:p-5 m-3 sm:m-5">
                 <h1 className="text-gma-text-white text-center text-xl sm:text-2xl font-roboto-condensed font-bold">
                   {title}
                 </h1>
               </div>
+              </Link>
             </div>
           ))}
       </div>

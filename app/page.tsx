@@ -1,10 +1,57 @@
+'use client';
 import Link from 'next/link';
 import Image from 'next/image'
+import { useEffect, useState } from 'react';
+import type { Schema } from '../amplify/data/resource'
+import { generateClient } from 'aws-amplify/data'
+import { StorageImage } from '@aws-amplify/ui-react-storage';
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+
+const client = generateClient<Schema>()
+
+import { Amplify } from 'aws-amplify'
+import outputs from "@/amplify_outputs.json";
+Amplify.configure(outputs)
 
 
 export default function Home() {
 
+  const [products, setProducts] = useState<Schema["Product"]["type"][]>([]);
+  const [newProducts, setNewProducts] = useState<Schema["Product"]["type"][]>([]);
+
+  const fetchProducts = async () => {
+    const { data: items, errors } = await client.models.Product.list({ authMode: 'identityPool' });
+    console.log("Fetched Products:", items, errors);
+    setProducts(items);
+  };
   
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  const pick5RanProd = () => {
+    if (!products.length) return;
+
+    const picked: typeof products = [];
+    const usedIndexes = new Set();
+
+    while (picked.length < 5 && usedIndexes.size < products.length) {
+      const randomIndex = Math.floor(Math.random() * products.length);
+      if (!usedIndexes.has(randomIndex)) {
+        usedIndexes.add(randomIndex);
+        picked.push(products[randomIndex]);
+      }
+    }
+
+    setNewProducts(picked);
+  };
+
+  useEffect(() => {
+    if (products.length) {
+      pick5RanProd();
+    }
+  }, [products]);
 
 
   return (
@@ -30,6 +77,25 @@ export default function Home() {
         <p className='text-[18px] font-roboto-condensed text-gma-text-p max-w-[900px] mx-auto leading-[35px] lg:leading-[45px] mt-4'>
           GMA Medical is focused on providing new and cost efficient technologies for the Surgical Services market that will improve patient outcomes, improve a facility's processes, and improve the surgeon's ability to perform procedures. Our commitment is to assist our customers to meet their objectives.
         </p>
+
+        <div className='flex justify-center'>
+          {newProducts.length > 0 && (
+            <Carousel className="w-[250px] md:w-[400px] md:h-[400px] bg-transparent" autoPlay infiniteLoop interval={1200} showArrows={false} showStatus={false} showIndicators={false} >
+              {newProducts.map((product, index) => (
+                <div key={index} className='h-[250px] md:h-[400px] m-[5px] mt-[35px]'>
+                  <StorageImage
+                    alt={`${product.title} Image`}
+                    path={`images/${product.title}/${product.images?.[0] || "placeholder.png"}`}
+                    objectFit="contain"
+                    height="90%"
+                    width="100%"
+                  />
+                </div>
+              ))}
+            </Carousel>
+          )}
+        </div>
+
       </div>
 
 
@@ -83,14 +149,14 @@ export default function Home() {
         </div>
       </div>
 
-      <div id='whats-next' className='text-center p-[85px] flex flex-col'>
+      <div id='whats-next' className='text-center p-[85px] flex flex-col items-center'>
         <h2 className='text-[38px] font-bold font-roboto-condensed lg:text-[45px]'>What's Next?</h2>
         <h3 className='text-[18px] font-roboto-condensed text-gma-text-p'>
           Not sure what's next? Browse our wide selection of {<Link href="/Products" className='font-bold border-b-2'>products</Link>}—then reach out! It's that easy.
         </h3>
         <Link 
           href="/Contact"
-          className='bg-gma-blue mt-[35px] p-[15px] px-[40px] py-[12px] w-[200px] mx-auto rounded-full text-gma-text-white font-roboto-condensed font-bold text-[25px] hover:bg-blue-700 hover:text-[26px]'
+          className='bg-[#235CAD] w-xs md:w-md px-8 py-3 rounded-full text-white font-roboto-condensed font-bold text-xl hover:bg-blue-700 hover:scale-105 transition-transform duration-200 shadow-md mt-[25px]'
         >
           Contact
         </Link>     

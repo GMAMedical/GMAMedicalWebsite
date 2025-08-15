@@ -80,15 +80,17 @@ export default function Products() {
           {products.map(({ id, title, companyName, images }) => (
             <div
               id="product-card"
-              className="border-4 border-gma-text-white bg-gma-text-white rounded-lg shadow-xl/30 mb-7 mx-auto w-[90%] sm:w-[80%] md:w-[300px] lg:w-[350px]"
+              className="border-4 border-gma-text-white bg-gma-text-white rounded-lg shadow-xl/30 mb-7 mx-auto w-[90%] sm:w-[80%] md:w-[300px] lg:w-[350px] hover:scale-105 transition-transform duration-200"
               key={id}
             >
               <Link key={id} href={"/Products/" + id}>
-              <div className="w-full h-[200px] sm:h-[250px] md:h-[305px] overflow-hidden">
+              <div className="w-full h-[200px] md:h-[300px]">
                 <StorageImage 
                   alt={`${title} Image`} 
                   path={`images/${title}/${images?.[0] || "placeholder.png"}`}
-                  className="w-full h-full object-cover"
+                  objectFit="contain"
+                  height="100%"
+                  width="100%"
                 />
               </div>
 

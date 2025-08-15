@@ -16,7 +16,8 @@
     "aws-amplify": "^6.15.4",
     "next": "15.3.4",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-responsive-carousel": "^3.2.23"
   },
   "devDependencies": {
     "@aws-amplify/backend": "^1.16.1",

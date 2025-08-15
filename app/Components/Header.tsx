@@ -48,7 +48,7 @@ export default function Header() {
             <Link href="/">
                 <Image
                     src="/Images/GMA-Logo-w-text.jpg"
-                    className='w-[100px] md:w-[120px] rounded-full hover:w-[130px]'
+                    className='w-[100px] md:w-[120px] rounded-full hover:scale-105 transition-transform duration-200 shadow-md'
                     alt="GMA Logo"
                     width={100}
                     height={100}
@@ -83,13 +83,13 @@ export default function Header() {
 
             {/* Mobile Menu */}
             {menuOpen && (
-                <div className='absolute top-full left-0 w-full bg-gma-blue text-white flex flex-col items-start px-6 py-4 space-y-4 md:hidden z-10 shadow-lg'>
+                <div className='absolute top-full left-0 w-full bg-gma-blue text-white flex flex-col items-center px-6 py-4 space-y-4 md:hidden z-10 shadow-lg'>
                     {menuLinks.map((text) => (
                         <Link
                             key={text}
                             href={`/${text}`}
                             onClick={() => setMenuOpen(false)}
-                            className='text-[18px] font-roboto font-extrabold hover:underline underline-offset-4 decoration-white decoration-2'
+                            className='text-[18px] font-roboto font-extrabold hover:underline underline-offset-4 decoration-white decoration-2 w-full text-center'
                         >
                             {text}
                         </Link>

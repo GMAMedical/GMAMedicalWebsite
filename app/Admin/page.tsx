@@ -13,7 +13,7 @@ import { generateClient } from 'aws-amplify/data'
 
 import { Amplify } from 'aws-amplify'
 import outputs from "@/amplify_outputs.json";
-Amplify.configure(outputs, { ssr: true })
+Amplify.configure(outputs)
 
 const client = generateClient<Schema>()
 
@@ -315,7 +315,7 @@ function Admin() {
           <input
             type="submit"
             value="Add Product"
-            className="border-2 border-blue-600 px-4 py-2 text-2xl bg-gma-blue rounded-2xl text-gma-text-white font-roboto font-extrabold hover:bg-blue-700 mt-[25px]"
+            className="bg-[#235CAD] px-8 py-3 rounded-full text-white font-roboto-condensed font-bold text-xl hover:bg-blue-700 hover:scale-105 transition-transform duration-200 shadow-md mt-[35px]"
             onClick={() => msgAddProudct()}
           />
 
@@ -376,7 +376,7 @@ function Admin() {
       </div>
 
       <div id="sign-out-section" className="flex justify-center my-[55px]">
-        <button onClick={() => handleSignOut()} className="border-2 border-blue-600 px-4 py-2 text-2xl bg-gma-blue rounded-2xl text-gma-text-white font-roboto font-extrabold hover:bg-blue-700">Sign out</button>
+        <button onClick={() => handleSignOut()} className="bg-[#235CAD] px-8 py-3 rounded-full text-white font-roboto-condensed font-bold text-xl hover:bg-blue-700 hover:scale-105 transition-transform duration-200 shadow-md">Sign out</button>
       </div>
 
     </div>

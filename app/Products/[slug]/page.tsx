@@ -4,6 +4,8 @@ import type { Schema } from '../../../amplify/data/resource'
 import { generateClient } from 'aws-amplify/data'
 import { use } from 'react'
 import { StorageImage } from '@aws-amplify/ui-react-storage';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 
 const client = generateClient<Schema>()
 
@@ -31,64 +33,81 @@ export default function ProductsPage({params,}: {params: Promise<{ slug: string 
     return (
         <div className="flex flex-col items-center">
 
-            
-            <div className="grid grid-cols-1 grid-rows-1 md:grid-cols-2 md:grid-rows-2">
-                {product?.images?.map((image, index) => (
-                    <StorageImage
-                        key={index}
-                        alt={`${product.title} Image`} 
+            <div id="image-carousel">
+                <Carousel className="w-[350px] md:w-[650px] md:h-[700px] mt-[65px] bg-[#235CAD]" infiniteLoop>
+                    {product?.images?.map((image, index) => (
+                    <div key={index} className="h-[500px] md:h-[700px] pt-[35px]">
+                        <StorageImage
+                        alt={`${product.title} Image`}
                         path={`images/${product.title}/${image || "placeholder.png"}`}
-                        className="block w-[275px] h-[275px] sm:h-[250px] md:h-[500px] md:w-[550] object-cover m-[25px] border-5"
-                        style={{ aspectRatio: '1 / 1' }}
-                    />
-                ))}
+                        objectFit="contain"
+                        height="90%"
+                        width="100%"
+                        />
+                    </div>
+                    ))}
+                </Carousel>
             </div>
-            
 
-            <div id="title" className="py-8 px-4">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-roboto-condensed text-center">
+            <div id="title" className="py-10 px-6 text-center">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-roboto-condensed text-[#235CAD]">
                     {product?.title}
                 </h1>
             </div>
 
-            <div id="companyName" className="flex flex-col items-center bg-gma-gray w-full py-12 px-4">
-                <h3 className="text-2xl sm:text-3xl font-bold text-gma-text-white font-roboto-condensed mb-2 underline">
+            <div 
+                id="companyName" 
+                className="flex flex-col items-center bg-[#235CAD] py-12 px-6 rounded-xl shadow-lg w-full max-w-4xl mx-auto"
+            >
+                <h3 className="text-2xl sm:text-3xl font-bold text-white font-roboto-condensed mb-3 underline decoration-2 underline-offset-4">
                     - Company Name -
                 </h3>
-                <h1 className="text-2xl sm:text-3xl font-bold text-gma-text-white font-roboto-condensed">
+                <h1 className="text-2xl sm:text-3xl font-bold text-white font-roboto-condensed">
                     {product?.companyName}
                 </h1>
             </div>
 
-            <div id="typeOfProduct" className="flex flex-col items-center py-12 px-4">
-                <h3 className="text-2xl sm:text-3xl font-bold font-roboto-condensed mb-2 underline">
+            <div 
+                id="typeOfProduct" 
+                className="flex flex-col items-center py-12 px-6 bg-white rounded-xl shadow-lg mt-8 w-full max-w-4xl mx-auto"
+            >
+                <h3 className="text-2xl sm:text-3xl font-bold text-[#235CAD] font-roboto-condensed mb-3 underline decoration-2 underline-offset-4">
                     - Type Of Product -
                 </h3>
-                <p className="text-xl sm:text-2xl font-bold font-roboto-condensed text-center max-w-md">
+                <p className="text-lg sm:text-xl font-bold font-roboto-condensed text-center max-w-md text-gray-800">
                     {product?.typeOfProduct}
                 </p>
             </div>
 
-            <div id="description" className="flex flex-col items-center bg-gma-gray w-full py-12 px-4">
-                <h3 className="text-2xl sm:text-3xl font-bold text-gma-text-white font-roboto-condensed mb-2 underline">
+            <div 
+                id="description" 
+                className="flex flex-col items-center bg-[#235CAD] py-12 px-6 rounded-xl shadow-lg mt-8 w-full max-w-4xl mx-auto"
+            >
+                <h3 className="text-2xl sm:text-3xl font-bold text-white font-roboto-condensed mb-3 underline decoration-2 underline-offset-4">
                     - Description -
                 </h3>
-                <p className="text-base sm:text-lg text-gma-text-white font-roboto-condensed max-w-3xl text-center leading-relaxed">
+                <p className="text-base sm:text-lg text-white font-roboto-condensed max-w-3xl text-center leading-relaxed">
                     {product?.description}
                 </p>
             </div>
 
-            <div id="indications" className="flex flex-col items-center py-12 px-4">
-                <h3 className="text-2xl sm:text-3xl font-bold font-roboto-condensed mb-2 underline">
+            <div 
+                id="indications" 
+                className="flex flex-col items-center py-12 px-6 bg-white rounded-xl shadow-lg mt-8 w-full max-w-4xl mx-auto"
+            >
+                <h3 className="text-2xl sm:text-3xl font-bold text-[#235CAD] font-roboto-condensed mb-3 underline decoration-2 underline-offset-4">
                     - Indications -
                 </h3>
-                <p className="text-base sm:text-lg font-roboto-condensed max-w-3xl text-center leading-relaxed">
+                <p className="text-base sm:text-lg font-roboto-condensed max-w-3xl text-center leading-relaxed text-gray-800">
                     {product?.indications}
                 </p>
             </div>
 
-            <div className="my-12">
-                <Link href="/Products" className="bg-gma-blue p-[15px] px-[40px] py-[12px] w-[200px] mx-auto rounded-full text-gma-text-white font-roboto-condensed font-bold text-[25px] hover:bg-blue-700 hover:text-[26px]">
+            <div className="my-12 flex justify-center">
+                <Link 
+                    href="/Products" 
+                    className="bg-[#235CAD] px-8 py-3 rounded-full text-white font-roboto-condensed font-bold text-xl hover:bg-blue-700 hover:scale-105 transition-transform duration-200 shadow-md"
+                >
                     Back to Products
                 </Link>
             </div>

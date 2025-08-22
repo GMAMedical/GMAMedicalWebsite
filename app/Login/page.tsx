@@ -45,7 +45,7 @@ export default function Login() {
 
       <div id='login-container' className="w-full text-center pt-[95px]">
 
-        <div id='title-login' className="bg-gma-gray p-[15px] pb-[55px] md:p-[95px] md:w-5/6 md:mx-auto md:rounded-2xl">
+        <div id='title-login' className="bg-gma-gray p-[15px] pb-[55px] mb-[55px] md:p-[95px] md:w-5/6 md:mx-auto md:rounded-2xl">
 
           <h2 className="font-roboto-condensed text-gma-text-white text-[65px] font-bold">LOGIN</h2>
 

@@ -172,7 +172,7 @@ export default function Home() {
               <h2 className='text-[38px] md:text-[55px] drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] mt-[15px] md:mt-[0px]'>OUR VALUES</h2>
             </div>
             <div className='flex justify-center'>
-              <hr className='border-5 w-xs md:w-xl'/>
+              <hr className='border-3 w-xs md:w-xl'/>
             </div>
             <div className='flex justify-center text-[20px] mt-[15px]'>
               <p className='drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>What makes us... US</p>
@@ -201,7 +201,7 @@ export default function Home() {
               <h2 className='text-[38px] md:text-[55px] drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] mt-[15px] md:mt-[0px] text-nowrap'>OUR EXPERIENCE</h2>
             </div>
             <div className='flex justify-center'>
-              <hr className='border-5 w-xs md:w-xl'/>
+              <hr className='border-3 w-xs md:w-xl'/>
             </div>
             <div className='flex justify-center text-[20px] mt-[15px]'>
               <p className='drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>A little background about us.</p>
@@ -220,7 +220,7 @@ export default function Home() {
               <h2 className='text-[38px] md:text-[55px] drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] mt-[15px] md:mt-[0px]'>OUR FOCUS</h2>
             </div>
             <div className='flex justify-center'>
-              <hr className='border-5 w-xs md:w-xl'/>
+              <hr className='border-3 w-xs md:w-xl'/>
             </div>
             <div className='flex justify-center text-[20px] mt-[15px]'>
               <p className='drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>What's our goal?</p>

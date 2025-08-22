@@ -174,8 +174,8 @@ export default function Products() {
       </div>
 
 
-      <div id='filter-options' className="mt-[35px] flex flex-col md:flex-row justify-center">
-        <div id="search-bar" className="relative flex items-center text-gray-400 focus-within:text-gray-600 ml-[16px] md:ml-0">
+      <div id='filter-options' className="mt-[35px] flex flex-col md:flex-row items-center md:justify-center">
+        <div id="search-bar" className="relative flex items-center text-gray-400 focus-within:text-gray-600">
 
           < Search className="absolute ml-3 pointer-events-none"/>
 
@@ -187,10 +187,10 @@ export default function Products() {
             value={search}
           />
 
-          <button className="absolute ml-78" onClick={() => setSearch("")}>
+          <button className="absolute ml-77" onClick={() => setSearch("")}>
             <X className="text-red-500"/>
           </button>
-          
+
 
         </div>
 

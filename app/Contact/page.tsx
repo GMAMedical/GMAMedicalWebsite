@@ -36,18 +36,26 @@ export default function Contact() {
 
                 <hr />
 
-                <div className="flex flex-row justify-between">
-                  <a 
-                    href="tel:513-368-3152"
-                    className="bg-[#235CAD] px-8 py-3 rounded-full text-white font-roboto-condensed font-bold text-xl hover:bg-blue-700 hover:scale-105 transition-transform duration-200 shadow-md"  
-                  >Phone</a>
+                <div className="flex flex-col md:flex-row justify-center gap-8 mt-6">
 
-                  <a 
-                    href="mailto:jbetz@gmamedical.com"
-                    className="bg-[#235CAD] px-8 py-3 rounded-full text-white font-roboto-condensed font-bold text-xl hover:bg-blue-700 hover:scale-105 transition-transform duration-200 shadow-md"
-                  >Email</a>
+                  <div className="flex flex-col items-center text-center">
+                    <a
+                      href="tel:513-368-3152"
+                      className="bg-[#235CAD] w-40 md:w-48 px-6 py-3 rounded-full text-white font-roboto-condensed font-bold text-lg hover:bg-blue-700 hover:scale-105 transition-transform duration-200 shadow-md text-center"
+                    >Phone</a>
+                    <p className="mt-2 text-gray-800 text-sm md:text-base">513-368-3152</p>
+                  </div>
+
+                  <div className="flex flex-col items-center text-center">
+                    <a
+                      href="mailto:jbetz@gmamedical.com"
+                      className="bg-[#235CAD] w-40 md:w-48 px-6 py-3 rounded-full text-white font-roboto-condensed font-bold text-lg hover:bg-blue-700 hover:scale-105 transition-transform duration-200 shadow-md text-center"
+                    >Email</a>
+                    <p className="mt-2 text-gray-800 text-sm md:text-base break-all">jbetz@gmamedical.com</p>
+                  </div>
+
                 </div>
-                  
+
               </div>
 
           </div>
